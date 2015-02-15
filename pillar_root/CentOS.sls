@@ -3,7 +3,10 @@ packages:
   net_tools: net-tools
   yum_plugin_priorities: yum-plugin-priorities
   epel_repo: http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
+  epel_repo_icehouse: http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
   juno_repo: http://rdo.fedorapeople.org/openstack-juno/rdo-release-juno.rpm
+  icehouse_repo: http://repos.fedorapeople.org/repos/openstack/openstack-icehouse/rdo-release-icehouse-3.noarch.rpm
+  openstack_utils: openstack-utils
   openstack_selinux: openstack-selinux
   mysql_client: mariadb
   mysql_server: mariadb-server

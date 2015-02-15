@@ -3,20 +3,34 @@ yum_plugin_priorities_install:
   pkg:
     - installed
     - name: {{ salt['pillar.get']('packages:yum_plugin_priorities') }}
+{% endif %}
 
+{% if pillar['cluster_type'] == 'juno' and grains['os'] == 'CentOS' %}
 epel_repo_install:
   pkg:
     - installed
     - sources:
       - epel-release: "{{ salt['pillar.get']('packages:epel_repo') }}"
 
-{% if pillar['cluster_type'] == 'juno' %}
 juno_repo_install:
   pkg:
     - installed
     - sources:
       - rdo-release: "{{ salt['pillar.get']('packages:juno_repo') }}"
 {% endif %}
+
+{% if pillar['cluster_type'] == 'icehouse' and grains['os'] == 'CentOS' %}
+epel_repo_icehouse_install:
+  pkg:
+    - installed
+    - sources:
+      - epel-release: "{{ salt['pillar.get']('packages:epel_repo_icehouse') }}"
+
+icehouse_repo_install:
+  pkg:
+    - installed
+    - sources:
+      - rdo-release: "{{ salt['pillar.get']('packages:icehouse_repo') }}"
 {% endif %}
 
 {% if pillar['cluster_type'] == 'juno' and grains['os'] == 'Ubuntu' %}
